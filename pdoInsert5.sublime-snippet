@@ -11,9 +11,13 @@
     ':${6:field_5}' => \$${6:field_5}
 );
 
-\$stmt = \$dbh->prepare($sql);
-\$stmt->execute(\$data);
-\$insert_id = \$dbh->lastInsertId();
+try {
+    \$stmt = \$dbh->prepare($sql);
+    \$stmt->execute(\$data);
+    \$insert_id = \$dbh->lastInsertId();
+} catch (Exception $e) {
+    throw new Exception("Insert into ${1:table_one} Failed! " . $e->getMessage());
+}
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>pdoInsert</tabTrigger>
