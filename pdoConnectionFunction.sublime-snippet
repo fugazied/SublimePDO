@@ -9,7 +9,7 @@
         \$dsn = 'mysql:dbname='.\$this->_database['database'].';host=127.0.0.1';
         \$this->_dbh = new PDO($dsn, \$this->_database['username'], \$this->_database['password']);
         \$this->_dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
+   }
 ]]></content>
 <tabTrigger>pdoConnectFunction</tabTrigger>
 <description>Adds a PDO method to a class</description>
