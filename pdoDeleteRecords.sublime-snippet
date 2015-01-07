@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+try{
+    \$stmt = \$dbh->prepare('DELETE FROM ${1:tableName} WHERE ${2:fieldName} = ?');
+
+    foreach(\$${3:deleteArrayName} as \$deleteId)
+    {
+        \$stmt->execute(array(\$deleteId));
+        //\$this->log->info("Entry with with ID: $deleteId has been deleted.");
+    }
+} catch (Exception \$e) {
+    throw new Exception( "Deletion failed!");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoDeleteRecords</tabTrigger>
+     <description>PDO Delete Multiple Records (Loop)</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

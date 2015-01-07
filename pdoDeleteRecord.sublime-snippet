@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+try{
+    \$stmt = \$dbh->prepare('DELETE FROM ${1:tableName} WHERE ${2:fieldName} = ?');
+    \$stmt->execute(array(\$${3:deleteId}));
+    //\$this->log->info("Entry with with ID: \$deleteId has been deleted.");
+    }
+} catch (Exception \$e) {
+    throw new Exception( "Deletion failed!");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoDeleteRecord</tabTrigger>
+     <description>PDO Delete Single Record</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

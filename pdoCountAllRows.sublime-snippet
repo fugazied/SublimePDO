@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+try {
+\$countSql = "SELECT COUNT(*) FROM ${1:TABLE_NAME}";
+\$count = current(\$this->_dbh->query(\$countSql)->fetch());
+} catch (Exception $e) {
+    throw new Exception("Unable to count rows");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoCountAllRows</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <description>Count all rows in a table</description>
+</snippet>

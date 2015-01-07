@@ -1,0 +1,34 @@
+<snippet>
+    <content><![CDATA[
+\$sql = "INSERT INTO ${1:table_one} (
+        ${2:field_1}, ${3:field_2}, ${4:field_3}, ${5:field_4}, ${6:field_5},
+        ${7:field_6}, ${8:field_7}, ${9:field_8}, ${10:field_9}, ${11:field_10}
+        )
+        VALUES (
+        :${2:field_1}, :${3:field_2}, :${4:field_3}, :${5:field_4}, :${6:field_5},
+        :${7:field_6}, :${8:field_7}, :${9:field_8}, :${10:field_9}, :${11:field_10}
+        )";
+
+\$data = array(
+    ':${2:field_1}' => \$${2:field_1},
+    ':${3:field_2}' => \$${3:field_2},
+    ':${4:field_3}' => \$${4:field_3},
+    ':${5:field_4}' => \$${5:field_4},
+    ':${6:field_5}' => \$${6:field_5},
+    ':${7:field_6}' => \$${7:field_6},
+    ':${8:field_7}' => \$${8:field_7},
+    ':${9:field_8}' => \$${9:field_8},
+    ':${10:field_9}' => \$${10:field_9},
+    ':${11:field_10}' => \$${11:field_10}
+);
+
+\$stmt = \$dbh->prepare($sql);
+\$stmt->execute(\$data);
+\$insert_id = \$dbh->lastInsertId();
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoInsert</tabTrigger>
+     <description>PDO Insert (10)</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

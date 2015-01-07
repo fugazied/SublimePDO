@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+\$sql = "SELECT COUNT(*) FROM ${1:TABLE_NAME} WHERE ${2:FIELD_NAME} = :${2:FIELD_NAME} LIMIT 0 , 30";
+
+try {
+    \$stmt = $this->_dbh->prepare(\$sql);
+    \$stmt->execute(array(':${2:FIELD_NAME}' => \$${2:FIELD_NAME}));
+} catch (Exception \$e) {
+    throw new Exception("Unable to count rows");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoCountMatchingRows</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <description>Count Rows Matching a Field Value</description>
+</snippet>

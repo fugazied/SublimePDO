@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+try {
+    \$database = array('database' => ${1:DATABASENAME}, 'user' => ${2:USERNAME}, 'password' => ${3:PASSWORD});
+    \$dsn = 'mysql:dbname=' . \$database['database'] . ';host=127.0.0.1';
+    \$dbh = new PDO(\$dsn, \$database['user'], \$database['password']);
+    \$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Exception \$e) {
+    throw new Exception("Unable to connect to database");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pdoConnect</tabTrigger>
+    <description>PDO Connection Strings</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
