@@ -1,12 +1,12 @@
 <snippet>
     <content><![CDATA[
-try{
+try {
     \$stmt = \$dbh->prepare('DELETE FROM ${1:tableName} WHERE ${2:fieldName} = ?');
     \$stmt->execute(array(\$${3:deleteId}));
     //\$this->log->info("Entry with with ID: \$deleteId has been deleted.");
     }
 } catch (Exception \$e) {
-    throw new Exception( "Deletion failed!");
+    throw new Exception("Deletion failed!");
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
