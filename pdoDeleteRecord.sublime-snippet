@@ -6,7 +6,7 @@ try {
     //\$this->log->info("Entry with with ID: \$deleteId has been deleted.");
     }
 } catch (Exception \$e) {
-    throw new Exception("Deletion failed!");
+    throw new Exception("${4:Description} -- Deletion failed! " . $e->getMessage());
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
